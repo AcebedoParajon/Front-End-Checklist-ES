@@ -3,7 +3,7 @@
 [![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/eoasakura/Front-End-Checklist-ES/)
 [![CC0](https://img.shields.io/badge/license-CC0-green.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-La **Front-End Checklist** es una lista exahustiva de todos los elementos que necesitas tener/probar antes de lanzar tu sitio/página HTML a producción.
+La **Front-End Checklist** es una lista exhaustiva de todos los elementos que necesitas tener/probar antes de lanzar tu sitio/página HTML a producción.
 
 Esta basada en años de experiencia de desarrolladores Front-End, con agregados provenientes de otros checklist de código abierto.
 
@@ -25,7 +25,7 @@ Esta basada en años de experiencia de desarrolladores Front-End, con agregados 
 
 Todos los elementos en la **Front-End Checklist** son requeridos para la mayoría de los proyectos, pero algunos elementos pueden ser omitidos o no son esenciales (por ejemplo, en el caso de una aplicación web administrativa, quizás no necesitas la función de RSS). Elegimos usar 3 niveles de flexibilidad:
 
-* ![Bajo][low_img] significa que el elemento es **recomendado** pero puede ser omitido en situaciones partículares.
+* ![Bajo][low_img] significa que el elemento es **recomendado** pero puede ser omitido en situaciones particulares.
 * ![Medio][medium_img] significa que el elemento es **altamente recomendado** y eventualmente puede ser omitido en casos muy particulares. Algunos elementos, si son omitidos, pueden traer malas repercusiones en términos de rendimiento o SEO.
 * ![Alto][high_img] significa que el elemento **no se puede omitir** por ningún motivo. Puede causar una anomalía en su página, tener problemas de accesibilidad o SEO. Estos elementos deben tener prioridad en el test.
 
