@@ -181,7 +181,7 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 <html dir="rtl">
 ```
 
-> 📖 [dir - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir)
+> 📖 [Atributo Global dir - HTML - MDN](https://developer.mozilla.org/es/docs/Web/HTML/Atributos_Globales/dir)
 
 * [ ] **Alternate language:** ![Bajo][low_img] La etiqueta de lenguaje de tu sitio web está específicada y relacionada al lenguaje de la página actual .
 
@@ -192,7 +192,7 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 * [ ] **Comentarios condicionales:** ![Bajo][low_img] Comentarios condicionales están presentes para IE si son necesarios.
 
-> 📖 [About conditional comments (Internet Explorer) - MSDN - Microsoft](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
+> 📖 [Comentarios condicionales (Internet Explorer) - MSDN - Microsoft](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx) `(fuente en inglés)`
 
 * [ ] **RSS feed:** ![Bajo][low_img] Si tu proyecto es un blog o tiene artículos, un enlace RSS fue proprocionado.
 
@@ -208,6 +208,8 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 * [ ] **Facebook Open Graph:** ![Bajo][low_img] Todos los Facebook Open Graph (OG) fueron probados y ninguno es erroneo o contiene información falsa. Las imágenes necesitan ser de al menos 600 x 315 pixeles, se recomienda 1200 x 630 pixeles.
 
+> **Nota:** Al usar `og:image:width` y `og:image:height` se especificaran las dimensiones de la imagen al crawler para que pueda desplegar la imagen inmediatamente sin tener que descargarla y procesarla asíncronamente.
+
 ```html
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://example.com/page.html">
@@ -216,10 +218,13 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 <meta property="og:description" content="Descripción aquí">
 <meta property="og:site_name" content="Nombre del sitio">
 <meta property="og:locale" content="en_US">
+<!-- Las siguientes etiquetas son opcionales, pero recomendadas -->
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 ```
 
-> * 📖 [A Guide to Sharing for Webmasters](https://developers.facebook.com/docs/sharing/webmasters/)
-> * 🛠 Test your page with the [Facebook OG testing](https://developers.facebook.com/tools/debug/)
+> * 📖 [Guía para webmasters sobre el uso compartidos](https://developers.facebook.com/docs/sharing/webmasters/)
+> * 🛠 Prueba tus páginas con el [Depurador de contenido compartido](https://developers.facebook.com/tools/debug/)
 
 * [ ] **Twitter Card:** ![Bajo][low_img]
 
@@ -233,7 +238,7 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 <meta name="twitter:image" content="https://example.com/image.jpg">
 ```
 
-> * 📖 [Getting started with cards — Twitter Developers](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started)
+> * 📖 [Getting started with cards — Twitter Developers](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started) `(fuente en inglés)`
 > * 🛠 Test your page with the [Twitter card validator](https://cards-dev.twitter.com/validator)
 
 **[⬆ volver a arriba](#tabla-de-contenidos)**
@@ -246,7 +251,7 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 * [ ] **Elementos semánticos HTML5:** ![Alto][high_img] Los elementos semánticos HTML5 son usados apropiadamente (header, section, footer, main...).
 
-> 📖 [HTML Reference](http://htmlreference.io/)
+> 📖 [Referencia HTML](http://htmlreference.io/) `(fuente en inglés)`
 
 * [ ] **Páginas de error:** ![Alto][high_img] Páginas de error 400 y 5xx existen. Recuerda que las páginas de error 5xx necesitan tener su CSS integrado (sin llamadas externas del servidor actual).
 
@@ -266,8 +271,7 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 > 🛠 [Dirty markup](https://dirtymarkup.com/)
 
-* [ ] **Navegadores de escritorio:** ![Alto][high_img] Todas las páginas fueron probadas en todos los navegadores de escritorio actuales (Safari, Firefox, Chrome, Internet Explorer, Edge...).
-* [ ] **Navegadores móviles:**  ![Alto][high_img] Todas las páginas fueron probadas en todos los navegadores móviles actuales (Native browser, Chrome, Safari...).
+> * 🛠 [Sonar a linting tool for the web](https://sonarwhal.com/)
 
 * [ ] **Verificador de enlaces:** ![High][high_img] No hay enlaces rotos en la página,  verifica que no tienes ningún error 404.
 
@@ -275,9 +279,6 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 * [ ] **Prueba de Adblockers:** ![Medium][medium_img] Tu sitio web muesta el contenido correctamente cuando adblockers están habilitados (Puedes incluir un mensaje para sugerir a las personas deshabilitar su adblocker).
 
-- [ ] **Pixel perfect:** ![High][high_img] Las páginas son similares al diseño. Dependiendo de la calidad de los creativos, podrías no ser 100% exacto, pero tu página necesita verse muy similar a tu plantilla.
-
-> [Pixel Perfect - Chrome Extension](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en)
 
 **[⬆ volver a arriba](#tabla-de-contenidos)**
 
@@ -285,14 +286,20 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 ## Webfonts
 
+> **Notas:** Usar fuentes web puede ocasionar retardos en la visualización de textos (Flash Of Unstyled Text/Flash Of Invisible Text), considera tener fuentes de respaldo y/0 usar cargadores de fuentes para controlar el comportamiento.
+> * 📖 [Consideraciones técnicas acerca de webfonts](https://developers.google.com/fonts/docs/technical_considerations) `(fuente en inglés)`
+
 * [ ] **Formato de fuentes:** ![Alto][high_img] WOFF, WOFF2 y TTF son formatos soportados por todos los navegadores modernos.
 
-> * 📖 [WOFF - Web Open Font Format - Caniuse](https://caniuse.com/#feat=woff).
-> * 📖 [WOFF 2.0 - Web Open Font Format - Caniuse](https://caniuse.com/#feat=woff2).
-> * 📖 [TTF/OTF - TrueType and OpenType font support](https://caniuse.com/#feat=ttf)
-> * 📖 [Using @font-face - CSS-Tricks](https://css-tricks.com/snippets/css/using-font-face/)
+> * 📖 [WOFF - Web Open Font Format - Caniuse](https://caniuse.com/#feat=woff). `(fuente en inglés)`
+> * 📖 [WOFF 2.0 - Web Open Font Format - Caniuse](https://caniuse.com/#feat=woff2). `(fuente en inglés)`
+> * 📖 [TTF/OTF - TrueType and OpenType font support](https://caniuse.com/#feat=ttf) `(fuente en inglés)`
+> * 📖 [Using @font-face - CSS-Tricks](https://css-tricks.com/snippets/css/using-font-face/) `(fuente en inglés)`
 
 * [ ] **Tamaño de fuentes:** ![High][high_img] El tamaño de las fuentes no excede los 2 MB (todas las variantes incluidas).
+* [ ] **Cargador de fuentes:** ![Low][low_img] Controlar el comportamiento de carga de fuentes con un cargador de fuentes web
+
+> * 🛠 [Typekit Web Font Loader](https://github.com/typekit/webfontloader)
 
 **[⬆ volver a arriba](#tabla-de-contenidos)**
 
@@ -336,8 +343,9 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 - [ ] **CSS sin utilizar:** ![Low][low_img] Remover CSS sin utilizar.
 
-> * 🛠 [UnCSS Online](https://uncss-online.com/) 🛠
+> * 🛠 [UnCSS Online](https://uncss-online.com/) 
 > * 🛠 [PurifyCSS](https://github.com/purifycss/purifycss)
+> * 🛠 [PurgeCSS](https://github.com/FullHuman/purgecss)
 > * 🛠 [Chrome DevTools Coverage](https://developers.google.com/web/updates/2017/04/devtools-release-notes#coverage)
 
 
@@ -355,10 +363,18 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 > 🛠 [CSS Validator](https://jigsaw.w3.org/css-validator/)
 
+* [ ] **Navegadores de escritorio:** ![High][high_img] Todas las págunas fueron probadas en todos los navegadores actuales (Safari, Firefox, Chrome, Edge...)
+* [ ] **Navegadores móviles:**  ![High][high_img] Todas las páginas fueron probadas en todos los navegadores móviles actuales (Navegador nativo, Chrome, Safari...)
+* [ ] **Sistema Operativo:**  ![High][high_img] Todas las páginas fueron probadas en todos los Sistemoas Operativos actuales (Windows, Android, iOS, Mac).
+
+- [ ] **Fidelidad al diseño:** ![Low][low_img] Dependiendo del proyecto y de la calidad creativa, pueden solicitarte apegarte lo más posible al diseño. Puedes utilizar herramientas para comparar los diseños con la implementación de código y asegurar consistencia.
+
+> 🛠 [Pixel Perfect - Extension para Chrome](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en)
+
 * [ ] **Dirección de lectura:** ![High][high_img] Todas las páginas necesitan ser probadas para idiomas LTR y RTL si necesitan soporte.
 
-> * 📖 [Building RTL-Aware Web Apps & Websites: Part 1 - Mozilla Hacks](https://hacks.mozilla.org/2015/09/building-rtl-aware-web-apps-and-websites-part-1/)
-> * 📖 [Building RTL-Aware Web Apps & Websites: Part 2 - Mozilla Hacks](https://hacks.mozilla.org/2015/10/building-rtl-aware-web-apps-websites-part-2/)
+> * 📖 [Building RTL-Aware Web Apps & Websites: Part 1 - Mozilla Hacks](https://hacks.mozilla.org/2015/09/building-rtl-aware-web-apps-and-websites-part-1/) `(fuente en inglés)`
+> * 📖 [Building RTL-Aware Web Apps & Websites: Part 2 - Mozilla Hacks](https://hacks.mozilla.org/2015/10/building-rtl-aware-web-apps-websites-part-2/) `(fuente en inglés)`
 
 **[⬆ volver a arriba](#tabla-de-contenidos)**
 
@@ -374,12 +390,20 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 > * 🛠 [Imagemin](https://github.com/imagemin/imagemin)
 > * 🛠 Usa [ImageOptim](https://imageoptim.com/) para optimizar tus imágenes gratis.
+> * 🛠 Usa [Kraken.io](https://kraken.io/web-interface) una maravillosa alternativa tanto para optimización png o jpg. Hasta 1mb por archivo en plan gratuito.
+> * 🛠 [TinyPNG](https://tinypng.com/) optimiza sin perdidas png, apng (png animado) e imágenes jpg. Versiones gratuitas y de pago disponibles.
+> * 🛠 [ZorroSVG](http://quasimondo.com/ZorroSVG/) compresion jpg para imágenes transparentes usando enmascarado svg.
+> * 🛠 [SVGO](https://github.com/svg/svgo) una herramienta basada en Nodejs para optimisar archivos de gráficos vectoriales.
+> * 🛠 [SVGOMG](https://jakearchibald.github.io/svgomg/)  herramienta para optimizar archivos svgs en línea.
+
+
+* [ ] **Picture/Srcset:** ![Medium][medium_img] You use picture/srcset to provide the most appropriate image for the current viewport of the user.
+
+> * 📖 [How to Build Responsive Images with srcset](https://www.sitepoint.com/how-to-build-responsive-images-with-srcset/)
 
 * [ ] **Retina:** ![Low][low_img] Proporcionas imágenes para layouts x2 o x3, soporte para retina display.
 * [ ] **Sprite:** ![Medium][medium_img] Las imágenes pequeñas están en un archivo sprite (en el caso de iconos, es recomedable colocarlos en formato SVG).
 * [ ] **Ancho y altura:** ![High][high_img] Todo las etiquetas `<img>` tienen una altura y ancho establecido (No especificar px o %).
-
-> ***Nota:*** Muchos desarrolladores asumen que definir el ancho y alto no es compatible con el diseño web responsivo, lo cual no es correcto.
 
 * [ ] **Lazy loading:** ![Medium][medium_img] Las imágenes usan lazy loading (solo cargan cuando están en la parte visible del viewport, siempre se proporciona un fallback que no use script).
 
@@ -406,9 +430,17 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 > [Guidelines for Developing Secure Applications Utilizing JavaScript](https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet#Guidelines_for_Developing_Secure_Applications_Utilizing_JavaScript)*
 
+* [ ] **`noscript` tag:** ![Medium][medium_img]  Usar la etiqueta `<noscript>`en el cuerpo del HTML si un script en la página no es soportado o si los scripts están desactivaos en el navegaor. Esto será útil en el renderizado de aplicaciones cliente-servidor pesadas, como React,js, ver [ejemplo](https://webdesign.tutsplus.com/tutorials/quick-tip-dont-forget-the-noscript-element--cms-25498) `(fuente en inglés)`
+
+```html
+<noscript>
+  Necesitas habilitar Javascript para visualizar la aplicación.
+</noscript>
+```
+
 * [ ] **No bloquea el renderizado:** ![Medium][medium_img] Los archivos JavaScript son cargados asíncronamente usando el atributo `async` o deferidos usando el atributo `defer`.
 
-> 📖 [Remove Render-Blocking JavaScript](https://developers.google.com/speed/docs/insights/BlockingJS)
+> 📖 [Remover Javascript que bloquea el renderizado](https://developers.google.com/speed/docs/insights/BlockingJS) `(fuente en inglés)`
 
 * [ ] **Modernizr:** ![Low][low_img] Si necesitas apuntar a alguna característica específica puedes usar Modernizr para agregar clases a tu etiqueta `<html>`.
 
@@ -464,6 +496,13 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 > * 📖 [X-Frame-Options - Scott Helme](https://scotthelme.co.uk/hardening-your-http-response-headers/#x-frame-options)
 > * 📖 [RFC7034 - HTTP Header Field X-Frame-Options](https://tools.ietf.org/html/rfc7034)
 
+* [ ] **Política de seguridad del contenido:** ![Medium][medium_img] Define cómo es cargado el contenido en tu sitio y desde dónde está permitido cargarlo. Puede ser usado para proteger contra ataques clckjacking.
+
+> * 📖 [Content Security Policy - An Introduction - Scott Helme](https://scotthelme.co.uk/content-security-policy-an-introduction/)
+> * 📖 [CSP Cheat Sheet - Scott Helme](https://scotthelme.co.uk/csp-cheat-sheet/)
+> * 📖 [CSP Cheat Sheet - OWASP](https://www.owasp.org/index.php/Content_Security_Policy_Cheat_Sheet)
+> * 📖 [Content Security Policy Reference](https://content-security-policy.com/)
+
 **[⬆ volver a arriba](#tabla-de-contenidos)**
 
 ---
@@ -472,13 +511,16 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 
 ### Mejores prácticas
 
-- [ ] **Peso de página:** ![High][high_img] El peso de cada página está entre 0 y 500 KB.
+- [ ] **Metas a alcanzar:** ![Medium][medium_img] Tu página debe alcanzar las siguientes metas:
+  - La primera visualización significativa suceda en menos de 1 segundo
+  - El tiempo para interactuar es menor a 5 segundos para una configuración "promedio" (un dispositivo Android en una red 3G lenta con 400ms RTT y velocidad de transferencia de 400kbps) y menor a 2 segundos para visitas recurrentes.
+  - Tamaño de archivo debajo de 170Kb gzipped
 
 > * 🛠 [Website Page Analysis](https://tools.pingdom.com)
+> * 🛠 [WebPageTest](https://www.webpagetest.org/)
 > * 📖 [Size Limit: Make the Web lighter](https://evilmartians.com/chronicles/size-limit-make-the-web-lighter)
 
 - [ ] **Minificado:** ![Medium][medium_img] Tu HTML está minificado.
-> 🛠 [W3C Validator](https://validator.w3.org/)
 
 * [ ] **Lazy loading:** ![Medium][medium_img] Imágenes, scripts y CSS necesitan cargarse implementando lazy loading para mejorar el tiempo de respuesta de la página actual (Mira los detalles en las secciones respectivas)
 
@@ -487,6 +529,10 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 > * 📖 [Cookie specification: RFC 6265](https://tools.ietf.org/html/rfc6265)
 > * 📖 [Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
 > * 🛠 [Browser Cookie Limits](http://browsercookielimits.squawky.net/)
+
+* [ ] **Componentes de terceros:** ![Medium][medium_img] iframes o componentes de terceros que dependan de JS externo (como botones para compartir contenido) son reemplazados por componentes estáticos cuando sea posible, asi se limitan llamadas externas a APIs y se mantiene privada la actividad de los usuarios.
+
+> * 🛠 [Simple sharing buttons generator](https://simplesharingbuttons.com/)
 
 ### Preparando solicitudes futuras
 
@@ -525,6 +571,7 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 > * 🛠 [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/)
 > * 🛠 [Test your mobile speed with Google](https://testmysite.withgoogle.com)
 > * 🛠 [WebPagetest - Website Performance and Optimization Test](https://www.webpagetest.org/)
+> * 🛠 [GTmetrix - Website speed and performance optimization](https://gtmetrix.com/)
 
 **[⬆ volver a arriba](#tabla-de-contenidos)**
 
@@ -590,22 +637,47 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 ## SEO
 
 * [ ] **Google Analytics:** ![High][high_img] Google Analytics está instalado y configurado correctamente.
+
+> * 🛠 [Google Analytics](https://analytics.google.com/analytics/web/)
+> * 🛠 [GA Checker (and others)](http://www.gachecker.com/)
+
 * [ ] **Lógica de encabezados:** ![Medium][medium_img] El texto de encabezado ayuda a entender el contenido en la página actual.
+
+> * 🛠 [Tota11y, tab Headings](http://khan.github.io/tota11y/#Try-it)
+
 * [ ] **sitemap.xml:** ![High][high_img] Existe un sitemap.xml y fue enviado por Google Search Console (nombrado Google Webmaster Tools anteriormente).
+
+> * 🛠 [Sitemap generator](https://websiteseochecker.com/html-sitemap-generator/)
+
 * [ ] **robots.txt:** ![High][high_img] El archivo robots.txt no bloquea páginas.
 
+> * 📖 [The robots.txt file](https://varvy.com/robottxt.html)
 > * 🛠 Test your robots.txt with [Google Robots Testing Tool](https://www.google.com/webmasters/tools/robots-testing-tool)
 
 * [ ] **Datos estructurados:** ![High][high_img] Las páginas usando datos estructurados son probadas y no contienen errores. Los datos estructurados ayudar a los crawlers a entender el contenido en la página actual.
 
 > * 📖 [Introduction to Structured Data - Search - Google Developers](https://developers.google.com/search/docs/guides/intro-structured-data)
+> * 📖 [RDFa - Linked Data in HTML](https://rdfa.info/)
+> * 📖 [JSON-LD](https://json-ld.org/)
+> * 📖 [Microdata](https://www.w3.org/TR/microdata/)
 > * 🛠 Test your page with the [Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/)
+> * 🛠 Complete list of vocabularies that can be used as structured data. [Schema.org Full Hierarchy](http://schema.org/docs/full.html)
 
 * [ ] **Sitemap HTML:** ![Medium][medium_img] Un sitemap HTML es proporcionado y es accesible con enlaces en el footer del sitio web.
 
 > * 📖 [Sitemap guidelines - Google Support](https://support.google.com/webmasters/answer/183668?hl=en)
-> * 🛠 [Sitemap generator](https://websiteseochecker.com/html-sitemap-generator/)
 
+* [ ] **Enlaces con etiquetas de paginación:** ![Medium][medium_img] Proporcionar `rel="prev"` y `rel="next"` para indicar contenido paginado.
+
+> * 🛠 [Pagination (rel="prev/next") Testing Tool](https://technicalseo.com/seo-tools/rel-prev-next/)
+
+> * 📖 [Pagination guidelines - Google Support](https://support.google.com/webmasters/answer/1663744?hl=en)
+
+```html
+<!-- Ejemplo: Enlaces con etiquetas de paginación de la página 2 -->
+<link rel="prev" href="https://example.com/?page=1">
+<link rel="next" href="https://example.com/?page=3">
+```
 
 **[⬆ vovler a arriba](#tabla-de-contenidos)**
 
@@ -621,6 +693,12 @@ La Front-End Checklist también está disponible en otros idiomas. ¡Gracias a t
 * 🇰🇷 Coreano: [kesuskim/Front-End-Checklist](https://github.com/kesuskim/Front-End-Checklist)
 * 🇧🇷 Portugués: [jcezarms/Front-End-Checklist](https://github.com/jcezarms/Front-End-Checklist)
 * 🇻🇳 Vietnamita: [euclid1990/Front-End-Checklist](https://github.com/euclid1990/Front-End-Checklist)
+* 🇹🇼 Traditional Chinese: [EngineLin/Front-End-Checklist](https://github.com/EngineLin/Front-End-Checklist)
+* 🇫🇷 French: [ynizon/Front-End-Checklist](https://github.com/ynizon/Front-End-Checklist)
+* 🇷🇺 Russian: [ungear/Front-End-Checklist](https://github.com/ungear/Front-End-Checklist)
+* 🇹🇷 Turkish: [eraycetinay/Front-End-Checklist](https://github.com/eraycetinay/Front-End-Checklist)
+* 🇩🇪 German: [xfuture603/Front-End-Checklist](https://github.com/xFuture603/Front-End-Checklist)
+
 
 **[⬆ volver a arriba](#tabla-de-contenidos)**
 
