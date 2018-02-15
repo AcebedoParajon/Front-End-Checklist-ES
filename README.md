@@ -81,14 +81,15 @@ Algunos recursos poseen un emoticón para ayudar a entender el tipo de contenido
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
-* [ ] **Title:** ![Alto][high_img] El título es usado en todas las páginas (SEO: No más de 65 caracteres, título del sitio web incluído).
+* [ ] **Title:** ![Alto][high_img] El título es usado en todas las páginas (SEO: Google calcula el ancho de los caracteres usados en el título y los corta entre los 477 y 485 pixeles. El límite promedio en los títulos es de no más de 55 caracteres).
 
 ```html
 <!-- Título del documento -->
-<title>Título de página menor a 65 caracteres</title>
+<title>Título de página menor a 55 caracteres</title>
 ```
 
 > 📖 [Título - HTML - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title) `(fuente en inglés)`
+> * 🛠 [SERP Snippet Generator](https://www.sistrix.com/serp-snippet-generator/) `(fuente en inglés)`
 
 * [ ] **Description:** ![Alto][high_img] Una meta descripción es proporcionada, es única y no posee más de 150 caracteres.
 
@@ -113,14 +114,21 @@ Algunos recursos poseen un emoticón para ayudar a entender el tipo de contenido
 > * 📖 [Favicons, Touch Icons, Tile Icons, etc. ¿Cuál necesitas? - CSS Tricks](https://css-tricks.com/favicon-quiz/) `(fuente en inglés)`
 > * 📖 [PNG favicons - caniuse](https://caniuse.com/#feat=link-icon-png) `(fuente en inglés)`
 
-* [ ] **Apple Touch Icon:** ![Bajo][low_img] Apple touch favicon apple-mobile-web-app-capable está presente. *(Crea tu archivo Apple Icon con una dimensión de al menos 200x200px para dar soporte a todas las dimensiones que podrías necesitar)*
+* [ ] **Apple Web App Meta:** ![Low][low_img] Se usan Apple meta-tags.
 
 ```html
-<!-- Apple Touch Icon -->
+<!-- Apple Touch Icon (al menos de 200x200px)-->
 <link rel="apple-touch-icon" href="/custom-icon.png">
+<!-- Para correr aplicaciones a pantalla completa -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<!-- Estilo de la barra de estado (ver enlace Meta Tags soportados para valores disponibles) -->
+<!-- No funcionará a menos que coloques la etiqueta anterior -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
 ```
 
 > 📖 [Configurando Aplicaciones Web](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html) `(fuente en inglés)`
+> * 📖 [Meta Tags soportados](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html) `(fuente en inglés)`
 
 - [ ] **Windows Tiles:**![Low][low_img] Windows tiles están presentes y enlazadas.
 
@@ -145,14 +153,17 @@ El marcado xml mínimo requerido para el archivo browserconfig.xml es el siguien
 </browserconfig>
 ```
 
-> 📖 [Browser configuration schema reference](https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85).aspx)
+> 📖 [Referencia de esquema de configuración del navegador](https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85).aspx) `(fuente en inglés)`
 
 * [ ] **Canonical:** ![Medium][medium_img] Usa `rel="canonical"` para evitar contenido duplicado.
 
 ```html
 <!-- Ayuda a prevenir problemas de contenido duplicado -->
-<link rel="canonical" href="http://example.com/2017/09/a-new-article-to-red.html">
+<link rel="canonical" href="http://ejemplo.com/2017/09/articulo-nuevo-para-leer.html">
 ```
+
+> * 📖 [Consolidar URLs duplicadas - Search Console Help - Google Support](https://support.google.com/webmasters/answer/139066?hl=es)
+> * 📖 [5 errores comunes con rel=canonical - Google Webmaster Blog](https://webmasters.googleblog.com/2013/04/5-common-mistakes-with-relcanonical.html) `(fuente en inglés)`
 
 ### Etiquetas HTML
 
